@@ -8,10 +8,12 @@ export function useAnimatedCounter(
   duration = 1.5,
   startOnView = true,
   delay?: number,
+  externalInView?: boolean,
 ) {
   const [value, setValue] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const selfInView = useInView(ref, { once: true, margin: "-40px" });
+  const isInView = externalInView ?? selfInView;
   const shouldReduceMotion = useReducedMotion();
   const hasAnimated = useRef(false);
 
