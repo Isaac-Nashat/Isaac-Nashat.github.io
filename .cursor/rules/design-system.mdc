@@ -1,0 +1,149 @@
+---
+description: Design system rules for Isaac's portfolio — typography, spacing, color, and layout conventions.
+globs: components/**/*.tsx, app/**/*.tsx, app/**/*.css
+alwaysApply: false
+---
+
+# Design System Rules
+
+## Typography Hierarchy
+
+### Section Headers (eyebrow labels)
+Used for: ABOUT, SELECTED WORK, EXPERTISE, HOW I WORK, CONTACT, CASE STUDY
+```
+text-[11px] font-medium tracking-[0.3em] uppercase text-white/60
+md:text-[13px] md:tracking-[0.35em]
+mb-4 md:mb-6 lg:mb-8
+```
+
+### Page Headings (h1/h2 — serif display)
+Used for: hero name, section headings, case study titles, "Let's work together"
+```
+font-serif font-normal text-white
+tracking-[-0.01em] to tracking-[-0.02em]
+Use clamp() for responsive sizing
+leading-[1.1] to leading-[1.25]
+```
+Never use `font-light` on serif — Forum only ships weight 400.
+
+### Sub-Headings (h3 — sans utility)
+Used for: Growth/Product/Execution titles, Diagnose/Prioritize/Execute/Refine
+```
+text-lg font-medium tracking-[-0.01em] text-white md:text-xl
+```
+
+### Sub-Labels (inside cards/lists)
+Used for: Design/Systems/Craft, Before, step numbers, stat labels
+```
+text-[11px] font-medium tracking-[0.25em] uppercase text-white/50
+md:text-[12px] md:tracking-[0.3em]
+```
+
+### Body Text
+```
+text-[14px] font-light leading-[1.7] text-gray
+md:text-[16px] md:leading-relaxed
+```
+
+### Metadata (tags, years, result labels)
+```
+text-[11px] font-medium tracking-[0.2em] text-white/50
+md:text-[12px] md:tracking-[0.25em]
+```
+
+### Metrics / Numbers
+```
+font-medium tabular-nums text-white
+```
+Sizes vary by context (text-xl in About stats, text-2xl+ in case study results).
+Always use `AnimatedMetric` component — never render raw metric strings.
+
+### CTAs / Buttons (uppercase navigation actions)
+```
+text-[11px] font-medium tracking-[0.18em] uppercase text-white/70
+md:text-[13px] md:tracking-[0.2em]
+```
+
+### Footer Text
+```
+text-[11px] font-light tracking-[0.12em] text-white/40
+md:text-[12px] md:tracking-[0.15em]
+```
+
+## Color System
+
+### Prefix/suffix color coding on metrics
+- `+` prefix or suffix → `var(--color-success)` (green)
+- `−` / `-` prefix or suffix → `var(--color-error)` (red)
+- `x` suffix → `var(--color-accent)` (blue)
+- `%` and other suffixes → inherit parent color
+
+### Text opacity hierarchy
+- `text-white` — headings, primary content
+- `text-white/70` — CTAs, interactive elements
+- `text-white/60` — section headers, eyebrows
+- `text-white/50` — sub-labels, metadata, tags
+- `text-white/40` — footer, tertiary info
+- `text-gray` (#A1A1A1) — body text
+
+## Spacing System
+
+### Section Padding (all main page sections)
+```
+pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20
+border-t border-white/[0.06]
+```
+Top and bottom padding are always equal. No `py-*` shorthand — use explicit `pt-` and `pb-` to prevent accidental asymmetry.
+
+### Content Container
+All sections wrap content in `.content-grid`:
+```
+max-width: 1280px, margin: auto, px: 24px
+```
+
+### Vertical gaps between elements
+Never use `gap-*` on `<main>` — each section owns its own spacing via padding.
+Margins between elements within sections should follow the scale: 4, 6, 8, 10, 12, 16, 20, 24.
+
+## Font System
+
+### Serif (Forum)
+- Used for: hero name, section headings, project titles, case study titles, nav brand mark
+- Weight: `font-normal` only (400 is the only available weight)
+- Tracking: slightly negative (`-0.01em` to `-0.02em`) on display sizes
+- Never use `font-light` with `font-serif`
+- Never use `uppercase` with `font-serif`
+
+### Sans (Inter)
+- Used for: everything else — body, labels, metadata, CTAs, forms, navigation links
+- Weights available: 300 (light), 400 (normal), 500 (medium), 600 (semibold)
+
+## Layout Rules
+
+### Case Studies
+`CaseStudyContent` is the single source of truth for case study layout. Both `CaseStudyPage` and `CaseStudyModal` are thin shells that only handle their own chrome (nav vs close bar). Never duplicate case study markup.
+
+### CSS Cascade (Critical)
+All custom CSS in `globals.css` must be inside `@layer base` or `@layer components`. Unlayered CSS overrides Tailwind utilities in v4. The `@theme inline` block is the only exception.
+
+### Responsive Breakpoints
+- Mobile: default (no prefix)
+- Tablet: `md:` (768px)
+- Desktop: `lg:` (1024px)
+- All components must be mobile-first. Never set mobile values via media queries.
+
+## Accessibility
+
+### Reduced Motion
+- Use `MotionConfig reducedMotion="user"` at the app root (already configured in `MotionProvider`)
+- For hero-specific animations, check `useReducedMotion()` and skip scroll transforms
+- Preloader and CustomCursor are disabled when reduced motion is preferred
+
+### Focus States
+- All interactive elements must have `focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30`
+- Inputs use border-color change instead of outline
+
+### Semantic HTML
+- Lists use `<ul>` + `<li>` — no `<div>` inside `<ul>`
+- Animated wrappers go inside `<li>`, not replacing it
+- Mobile nav overlay uses `role="dialog" aria-modal="true"`

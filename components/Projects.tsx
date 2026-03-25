@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import AnimatedMetric from "./AnimatedMetric";
 
 const categories = ["All", "Branding", "Web", "Product"];
 
@@ -27,13 +28,13 @@ export default function Projects() {
   return (
     <section
       id="work"
-      className="relative bg-black py-20 md:py-40 lg:py-56 border-t border-white/[0.06]"
+      className="relative bg-black pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20 border-t border-white/[0.06]"
     >
       <div className="content-grid">
         {/* Header + filter */}
         <div className="flex flex-col gap-4 mb-6 md:gap-6 md:mb-8 md:flex-row md:items-end md:justify-between lg:mb-12">
           <motion.p
-            className="text-[10px] font-light tracking-[0.3em] uppercase text-gray md:text-[11px] md:tracking-[0.4em]"
+            className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/60 md:text-[13px] md:tracking-[0.35em]"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -228,9 +229,7 @@ function BentoCard({
             <div className={`mt-3 flex gap-4 md:mt-4 md:gap-6 ${isNoirStudio ? "px-2" : ""}`}>
               {project.results.slice(0, 2).map((r) => (
                 <div key={r.label}>
-                  <p className="text-[15px] font-medium tabular-nums text-white/90 md:text-base">
-                    {r.value}
-                  </p>
+                  <AnimatedMetric value={r.value} className="text-[15px] font-medium tabular-nums text-white/90 md:text-base" />
                   <p className="text-[10px] font-light tracking-[0.12em] uppercase text-white/45 md:text-[12px] md:tracking-[0.15em]">
                     {r.label}
                   </p>

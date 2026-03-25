@@ -33,17 +33,17 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="relative bg-black py-12 md:py-16"
+      className="relative bg-black py-6 md:py-8"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <div className="content-grid flex flex-col items-center justify-between gap-3 border-t border-white/[0.06] pt-8 text-center md:flex-row md:gap-4 md:pt-10 md:text-left">
-        <p className="text-[10px] font-light tracking-[0.12em] uppercase text-white/40 md:text-[12px] md:tracking-[0.15em]">
+      <div className="content-grid flex flex-col items-center justify-between gap-3 text-center md:flex-row md:gap-4 md:text-left">
+        <p className="text-[11px] font-light tracking-[0.12em] uppercase text-white/40 md:text-[12px] md:tracking-[0.15em]">
           &copy; {new Date().getFullYear()} Isaac
         </p>
-        <p className="text-[10px] font-light tracking-[0.08em] text-white/40 md:text-[12px] md:tracking-[0.1em]">
+        <p className="text-[11px] font-light tracking-[0.12em] text-white/40 md:text-[12px] md:tracking-[0.15em]">
           {time && (
             <span>
               Local time {time} {tz} &middot;{" "}

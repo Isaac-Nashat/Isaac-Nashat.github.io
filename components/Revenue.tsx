@@ -13,10 +13,10 @@ const credentials = [
 
 export default function Revenue() {
   return (
-    <section className="relative bg-black py-20 md:py-40 lg:py-56 border-t border-white/[0.06]">
+    <section className="relative bg-black pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20 border-t border-white/[0.06]">
       <div className="content-grid bg-off-black rounded-xl p-5 md:rounded-2xl md:p-10 lg:p-12">
       <motion.p
-        className="mb-4 text-[10px] font-light tracking-[0.3em] uppercase text-gray md:mb-6 md:text-[11px] md:tracking-[0.4em] lg:mb-8"
+        className="mb-4 text-[11px] font-medium tracking-[0.3em] uppercase text-white/60 md:mb-6 md:text-[13px] md:tracking-[0.35em] lg:mb-8"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}

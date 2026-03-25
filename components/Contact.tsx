@@ -16,11 +16,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-black py-20 md:py-48 lg:py-72 border-t border-white/[0.06]"
+      className="relative bg-black pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20 border-t border-white/[0.06]"
     >
       <div className="content-grid">
         <motion.p
-          className="mb-4 text-[10px] font-light tracking-[0.3em] uppercase text-gray md:mb-6 md:text-[11px] md:tracking-[0.4em] lg:mb-8"
+          className="mb-4 text-[11px] font-medium tracking-[0.3em] uppercase text-white/60 md:mb-6 md:text-[13px] md:tracking-[0.35em] lg:mb-8"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -39,8 +39,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              Let&apos;s work
-              <br />
+              Let&apos;s work{" "}
               <span className="inline-block italic">together.</span>
             </motion.h2>
 
@@ -54,7 +53,7 @@ export default function Contact() {
               <div className="flex items-center gap-2 border border-white/10 px-3 py-1.5 rounded-md w-fit md:px-4 md:py-2">
                 <span className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-[10px] font-light tracking-[0.12em] uppercase text-white/60 md:text-[12px] md:tracking-[0.15em]">
-                  Available for freelance
+                  Available for consultation & freelance
                 </span>
               </div>
               <p className="text-[11px] font-light tracking-[0.08em] text-white/45 md:text-[12px] md:tracking-[0.1em]">
@@ -158,7 +157,7 @@ export default function Contact() {
                       type="submit"
                       disabled={state.submitting}
                       data-cursor="send"
-                      className="group mt-2 flex w-full items-center justify-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.02] px-5 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-white/70 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04] hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 disabled:opacity-40 disabled:pointer-events-none md:gap-3 md:px-6 md:py-4 md:text-[13px] md:tracking-[0.2em]"
+                      className="group mt-2 flex w-full items-center justify-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.02] px-5 py-3 text-[11px] font-medium tracking-[0.18em] uppercase text-white/70 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04] hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 disabled:opacity-40 disabled:pointer-events-none md:gap-3 md:px-6 md:py-4 md:text-[13px] md:tracking-[0.2em]"
                     >
                       {state.submitting ? "Sending…" : "Start Conversation"}
                       {!state.submitting && (
@@ -175,7 +174,7 @@ export default function Contact() {
         </div>
 
         <motion.div
-          className="mt-16 border-t border-white/[0.06] pt-8 md:mt-20 md:pt-10 lg:mt-24"
+          className="mt-10 border-t border-white/[0.06] pt-6 md:mt-12 md:pt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <ClientShell />
       <Navigation />
-      <main className="flex flex-col gap-16 md:gap-24">
+      <main>
         <Hero />
         <About />
         <Projects />

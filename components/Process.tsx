@@ -27,10 +27,10 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="relative bg-black section-shell py-32 md:py-48 border-t border-white/[0.06]">
+    <section className="relative bg-black pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20 border-t border-white/[0.06]">
       <div className="content-grid">
       <motion.p
-        className="mb-6 text-[12px] font-light tracking-[0.4em] uppercase text-gray md:mb-8"
+        className="mb-4 text-[11px] font-medium tracking-[0.3em] uppercase text-white/60 md:mb-6 md:text-[13px] md:tracking-[0.35em] lg:mb-8"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function Process() {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <p className="mb-4 text-[12px] font-light tracking-[0.2em] text-white/45">
+            <p className="mb-4 text-[11px] font-medium tracking-[0.2em] text-white/50">
               {step.number}
             </p>
             <h3 className="mb-3 text-lg font-medium tracking-[-0.01em] text-white md:text-xl">

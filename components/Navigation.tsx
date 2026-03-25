@@ -98,6 +98,17 @@ export default function Navigation() {
         aria-modal="true"
         aria-label="Navigation menu"
       >
+        {/* Close button */}
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="absolute top-6 right-6 z-10 flex h-10 w-10 items-center justify-center focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30"
+          aria-label="Close menu"
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70">
+            <path d="M1 1l16 16M17 1L1 17" />
+          </svg>
+        </button>
+
         {/* Animated gradient */}
         <motion.div
           className="absolute inset-0 pointer-events-none"

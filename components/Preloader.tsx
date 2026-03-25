@@ -28,7 +28,7 @@ export default function Preloader() {
         >
           <div className="relative overflow-hidden">
             <motion.p
-              className="font-serif text-[clamp(2rem,5vw,4rem)] font-normal tracking-[0.08em] text-white"
+              className="font-serif text-[clamp(2rem,5vw,4rem)] font-normal tracking-[-0.01em] text-white"
               initial={{ y: 80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}

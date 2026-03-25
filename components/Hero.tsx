@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
 import { LogoCloud } from "@/components/ui/logo-cloud-3";
+import AnimatedMetric from "@/components/AnimatedMetric";
 
 const nameChars = "Isaac".split("");
 
@@ -109,8 +110,7 @@ export default function Hero() {
       >
         {/* Eyebrow */}
         <motion.p
-          className="mb-4 text-center text-[10px] font-medium tracking-[0.2em] uppercase md:mb-6 md:text-[11px] md:tracking-[0.25em]"
-          style={{ color: "var(--color-text-muted)" }}
+          className="mb-4 text-center text-[11px] font-medium tracking-[0.3em] uppercase text-white/60 md:mb-6 md:text-[13px] md:tracking-[0.35em]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.8, ease: [0.22, 1, 0.36, 1] }}
@@ -183,7 +183,7 @@ export default function Hero() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <span style={{ color: "var(--color-text-muted)" }}>{item.metric}</span> {item.label}
+              <AnimatedMetric value={item.metric} className="text-[var(--color-text-muted)]" duration={1.8} delay={3.8 + i * 0.12} /> {item.label}
               {i < resultItems.length - 1 && <span className="mx-2">·</span>}
             </motion.span>
           ))}
@@ -198,9 +198,10 @@ export default function Hero() {
         >
           <a
             href="#work"
-            className="group inline-flex items-center gap-3 text-[11px] font-medium tracking-[0.18em] uppercase opacity-80 transition-all delay-[60ms] duration-400 hover:opacity-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 md:gap-4 md:text-[12px] md:tracking-[0.2em]"
+            className="group flex items-center gap-3 text-[11px] font-medium tracking-[0.18em] uppercase opacity-80 transition-all delay-[60ms] duration-400 hover:opacity-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 md:gap-4 md:text-[12px] md:tracking-[0.2em]"
             style={{ color: "var(--color-text)" }}
           >
+            <span className="block h-px w-6 bg-white/30 transition-all delay-[60ms] duration-500 group-hover:w-10 group-hover:bg-white md:w-8 md:group-hover:w-14" />
             See the Results
             <span className="block h-px w-6 bg-white/30 transition-all delay-[60ms] duration-500 group-hover:w-10 group-hover:bg-white md:w-8 md:group-hover:w-14" />
           </a>
