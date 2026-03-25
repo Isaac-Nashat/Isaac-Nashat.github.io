@@ -24,30 +24,25 @@ export function useAnimatedCounter(
     }
 
     if (startOnView && !isInView) return;
-    if (delay != null && !startOnView) {
+
+    const runAnimation = () => {
       hasAnimated.current = true;
-      const timeout = setTimeout(() => {
-        const start = performance.now();
-        const step = (now: number) => {
-          const elapsed = Math.min((now - start) / (duration * 1000), 1);
-          const eased = 1 - Math.pow(1 - elapsed, 3);
-          setValue(Math.round(eased * target));
-          if (elapsed < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      }, delay * 1000);
+      const start = performance.now();
+      const step = (now: number) => {
+        const elapsed = Math.min((now - start) / (duration * 1000), 1);
+        const eased = 1 - Math.pow(1 - elapsed, 3);
+        setValue(Math.round(eased * target));
+        if (elapsed < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    if (delay != null && !startOnView) {
+      const timeout = setTimeout(runAnimation, delay * 1000);
       return () => clearTimeout(timeout);
     }
 
-    hasAnimated.current = true;
-    const start = performance.now();
-    const step = (now: number) => {
-      const elapsed = Math.min((now - start) / (duration * 1000), 1);
-      const eased = 1 - Math.pow(1 - elapsed, 3);
-      setValue(Math.round(eased * target));
-      if (elapsed < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
+    runAnimation();
   }, [target, duration, isInView, startOnView, shouldReduceMotion, delay]);
 
   return { value, ref };
