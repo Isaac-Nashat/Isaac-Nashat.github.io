@@ -26,14 +26,14 @@ const skillGroups = [
     ],
   },
   {
-    title: "Execution",
+    title: "Automation",
     items: [
-      "Design Systems",
-      "Frontend Architecture",
-      "Automation & Internal Tooling",
-      "Web Performance Engineering",
-      "React / Next.js",
-      "Full-Stack Delivery",
+      "AI Agents & Autonomous Workflows",
+      "Event-Driven Pipelines (n8n / RabbitMQ)",
+      "CRM & Sales Automation",
+      "Multi-Platform Integrations",
+      "Self-Learning Feedback Loops",
+      "Full-Stack Systems (Next.js / Python)",
     ],
   },
   {

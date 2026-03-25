@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 const links = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Work", href: "#work" },
   { label: "Contact", href: "#contact" },
 ];
@@ -188,9 +189,9 @@ export default function Navigation() {
             </div>
             <div className="text-right">
               <p className="text-[12px] font-light tracking-[0.2em] uppercase text-white/40">
-                Booking
+                Availability
               </p>
-              <p className="mt-1 text-[14px] font-light text-gray">Q2 2026</p>
+              <p className="mt-1 text-[14px] font-light text-gray">Open now</p>
             </div>
           </div>
         </motion.div>

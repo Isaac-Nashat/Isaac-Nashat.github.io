@@ -15,13 +15,13 @@ const steps = [
   },
   {
     number: "03",
-    title: "Execute",
-    description: "Design, build, and ship fast.",
+    title: "Build",
+    description: "Design the strategy. Build the system that executes it.",
   },
   {
     number: "04",
-    title: "Refine",
-    description: "Measure, iterate, improve.",
+    title: "Automate",
+    description: "Make it run without me. Measure, learn, improve.",
   },
 ];
 

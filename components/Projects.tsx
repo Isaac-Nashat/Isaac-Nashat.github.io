@@ -6,7 +6,7 @@ import Link from "next/link";
 import { projects } from "@/lib/projects";
 import AnimatedMetric from "./AnimatedMetric";
 
-const categories = ["All", "Branding", "Web", "Product"];
+const categories = ["All", "Revenue", "Operations", "Branding", "Web", "Product"];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -22,8 +22,15 @@ export default function Projects() {
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
-  const row1 = filtered.slice(0, 2);
-  const row2 = filtered.slice(2, 4);
+  const rows: (typeof projects[number])[][] = [];
+  for (let i = 0; i < filtered.length; i += 2) {
+    rows.push(filtered.slice(i, i + 2));
+  }
+
+  const rowLayouts = [
+    { height: "md:h-[432px]", widths: ["md:w-[58%]", "md:w-[42%]"] },
+    { height: "md:h-[512px]", widths: ["md:w-[67%]", "md:w-[33%]"] },
+  ];
 
   return (
     <section
@@ -83,41 +90,26 @@ export default function Projects() {
         </AnimatePresence>
 
         <div className="content-grid">
-        <div className="flex flex-col gap-4">          {/* Row 1 */}
-          {row1.length > 0 && (
-            <div className="flex flex-col gap-4 md:flex-row md:h-[432px]">
-              {row1.map((project, i) => (
-                <BentoCard
-                  key={project.id}
-                  project={project}
-                  index={i}
-                  widthClass={i === 0 ? "md:w-[58%]" : "md:w-[42%]"}
-                  isTall={false}
-                  hoveredId={hoveredId}
-                  setHoveredId={setHoveredId}
-                  isTouchDevice={isTouchDevice}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Row 2 — taller */}
-          {row2.length > 0 && (
-            <div className="flex flex-col gap-4 md:flex-row md:h-[512px]">
-              {row2.map((project, i) => (
-                <BentoCard
-                  key={project.id}
-                  project={project}
-                  index={i + 2}
-                  widthClass={i === 0 ? "md:w-[67%]" : "md:w-[33%]"}
-                  isTall={true}
-                  hoveredId={hoveredId}
-                  setHoveredId={setHoveredId}
-                  isTouchDevice={isTouchDevice}
-                />
-              ))}
-            </div>
-          )}
+        <div className="flex flex-col gap-4">
+          {rows.map((row, ri) => {
+            const layout = rowLayouts[ri % rowLayouts.length];
+            return (
+              <div key={ri} className={`flex flex-col gap-4 md:flex-row ${layout.height}`}>
+                {row.map((project, i) => (
+                  <BentoCard
+                    key={project.id}
+                    project={project}
+                    index={ri * 2 + i}
+                    widthClass={row.length === 1 ? "md:w-full" : layout.widths[i]}
+                    isTall={ri % 2 === 1}
+                    hoveredId={hoveredId}
+                    setHoveredId={setHoveredId}
+                    isTouchDevice={isTouchDevice}
+                  />
+                ))}
+              </div>
+            );
+          })}
         </div>
         </div>
     </section>

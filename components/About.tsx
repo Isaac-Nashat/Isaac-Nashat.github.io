@@ -11,7 +11,7 @@ const philosophy = [
   },
   {
     label: "Systems",
-    value: "Architecture defines scalability. Bad foundations kill growth before design can save it.",
+    value: "I build the infrastructure that runs without me. AI agents, pipelines, and workflows that scale autonomously.",
   },
   {
     label: "Craft",
@@ -59,20 +59,21 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             <p>
-              Most teams treat strategy, product, design, and sales as
-              separate functions. That separation creates misalignment,
-              slows execution, and leaks revenue.
+              Most teams treat strategy, product, and sales as separate
+              functions. That separation creates misalignment, slows
+              execution, and leaks revenue.
             </p>
             <p>
               I work across the full system: from positioning and funnel
               design to product decisions and go-to-market execution,
-              ensuring every layer compounds toward growth.
+              then I build the automation that keeps it running without me.
             </p>
             <p>
-              My background in B2B SaaS sales and GTM strategy means I
-              don&apos;t just optimize interfaces. I optimize pipelines,
-              conversion paths, and revenue outcomes. The result: products
-              that don&apos;t just look good. They close, convert, and scale.
+              My background spans B2B SaaS sales, GTM strategy, and
+              building autonomous systems: AI agents, event-driven
+              pipelines, and self-learning workflows. I don&apos;t just
+              optimize processes. I automate them. The result: revenue
+              engines that close, convert, and scale on their own.
             </p>
           </motion.div>
         </div>
@@ -113,8 +114,9 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             {[
-              { number: "5+", label: "Years" },
+              { number: "7+", label: "Years" },
               { number: "40+", label: "Projects" },
+              { number: "25+", label: "Automations" },
               { number: "20+", label: "Clients" },
             ].map((stat) => (
               <div key={stat.label}>

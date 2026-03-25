@@ -7,8 +7,8 @@ const credentials = [
   "Built GTM strategies that improved pipeline quality and win rates",
   "Increased renewals by 25% and reduced CAC by 10%",
   "Led cross-functional execution across Product, Sales, and Analytics",
-  "Built CRM systems and dashboards improving forecasting accuracy",
-  "Managed C-level stakeholders and complex deal cycles",
+  "Built CRM systems, dashboards, and AI-powered sales automation pipelines",
+  "Designed autonomous systems that qualify leads, score intent, and convert at scale",
 ];
 
 export default function Revenue() {
@@ -35,7 +35,8 @@ export default function Revenue() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             I don&apos;t just design growth systems.
-            I&apos;ve <span className="italic">operated</span> them.
+            <br />
+            I <span className="italic">build and automate</span> them.
           </motion.h2>
         </div>
 

@@ -46,11 +46,9 @@ export default function Footer() {
         <p className="text-[11px] font-light tracking-[0.12em] text-white/40 md:text-[12px] md:tracking-[0.15em]">
           {time && (
             <span>
-              Local time {time} {tz} &middot;{" "}
+              Local time {time} {tz}
             </span>
-          )}
-          Designed & built with precision
-        </p>
+          )}        </p>
       </div>
     </motion.footer>
   );

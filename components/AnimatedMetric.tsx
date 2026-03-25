@@ -72,12 +72,18 @@ export default function AnimatedMetric({
   }
 
   const { prefix, number, suffix } = parseMetric(value);
+
+  const isTextOnly = number === 0 && suffix === value;
   const { value: animatedNumber, ref } = useAnimatedCounter(
     number,
     duration,
     delay == null,
     delay,
   );
+
+  if (isTextOnly) {
+    return <span ref={ref} className={className}>{value}</span>;
+  }
 
   const isPositive = prefix === "+";
   const isNegative = prefix === "−" || prefix === "-";

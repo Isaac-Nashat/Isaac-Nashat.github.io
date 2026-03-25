@@ -15,6 +15,7 @@ const nameChars = "Isaac".split("");
 
 const clientLogos = [
   { src: "/logos/frame-8.svg", alt: "Vodafone" },
+  { src: "/logos/talkmobile.svg", alt: "Talkmobile" },
   { src: "/logos/group-1.svg", alt: "Stripe" },
   { src: "/logos/group-2.svg", alt: "Notion" },
   { src: "/logos/group-4.svg", alt: "Linear" },
@@ -115,7 +116,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          Revenue & Growth Operator
+          Revenue Operator & Systems Builder
         </motion.p>
 
         {/* Name — each char has unique depth */}
@@ -159,8 +160,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 3.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          I turn products, funnels, and teams into revenue engines through
-          strategy, product, and GTM execution.
+          I turn products, funnels, and teams into revenue engines, then
+          build the systems that run them autonomously.
         </motion.p>
 
         {/* Results — data resolving in, not just appearing */}

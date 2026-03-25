@@ -18,9 +18,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Isaac — Revenue & Growth Operator",
+  title: "Isaac | Revenue Operator & Systems Builder",
   description:
-    "I turn products, funnels, and teams into revenue engines. Strategy, product, GTM, and execution — aligned to one outcome: growth.",
+    "I turn products, funnels, and teams into revenue engines. Strategy, product, GTM, and execution, aligned to one outcome: growth.",
 };
 
 export default function RootLayout({

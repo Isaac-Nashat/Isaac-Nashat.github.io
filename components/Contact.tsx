@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 
 const socials = [
-  { label: "GitHub", href: "https://github.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Twitter", href: "https://x.com" },
-  { label: "Dribbble", href: "https://dribbble.com" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/isaac-nashaat" },
+  { label: "Behance", href: "https://behance.net" },
+  { label: "Facebook", href: "https://facebook.com" },
+  { label: "Plateform", href: "https://www.plateform.me" },
 ];
 
 export default function Contact() {
@@ -53,7 +53,7 @@ export default function Contact() {
               <div className="flex items-center gap-2 border border-white/10 px-3 py-1.5 rounded-md w-fit md:px-4 md:py-2">
                 <span className="inline-block h-2 w-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-[10px] font-light tracking-[0.12em] uppercase text-white/60 md:text-[12px] md:tracking-[0.15em]">
-                  Available for consultation & freelance
+                  Available for projects & consultation
                 </span>
               </div>
               <p className="text-[11px] font-light tracking-[0.08em] text-white/45 md:text-[12px] md:tracking-[0.1em]">
