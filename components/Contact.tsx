@@ -5,8 +5,8 @@ import { useForm, ValidationError } from "@formspree/react";
 
 const socials = [
   { label: "LinkedIn", href: "https://linkedin.com/in/isaac-nashaat" },
-  { label: "Behance", href: "https://behance.net" },
-  { label: "Facebook", href: "https://facebook.com" },
+  { label: "Behance", href: "https://www.behance.net/isaacnashat" },
+  { label: "Facebook", href: "https://www.facebook.com/isaac.nashaat.2025/" },
   { label: "Plateform", href: "https://www.plateform.me" },
 ];
 

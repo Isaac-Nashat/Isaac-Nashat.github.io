@@ -23,6 +23,11 @@ const steps = [
     title: "Automate",
     description: "Make it run without me. Measure, learn, improve.",
   },
+  {
+    number: "05",
+    title: "Scale",
+    description: "Expand what works. Remove what doesn't. Compound.",
+  },
 ];
 
 export default function Process() {
@@ -39,7 +44,7 @@ export default function Process() {
         How I Work
       </motion.p>
 
-      <div className="grid gap-0 md:grid-cols-4">
+      <div className="grid gap-0 md:grid-cols-5">
         {steps.map((step, i) => (
           <motion.div
             key={step.number}
