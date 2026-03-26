@@ -103,11 +103,18 @@ export default function AnimatedMetric({
         </span>
       )}
       {animatedNumber}
-      {suffix && (
-        <span className={suffixColor(suffix)}>
-          {suffix}
-        </span>
-      )}
+      {suffix && (() => {
+        const trailingSign = suffix.match(/^(.+?)([+\-−])$/);
+        if (trailingSign) {
+          return (
+            <>
+              <span>{trailingSign[1]}</span>
+              <span className={suffixColor(trailingSign[2])}>{trailingSign[2]}</span>
+            </>
+          );
+        }
+        return <span className={suffixColor(suffix)}>{suffix}</span>;
+      })()}
     </span>
   );
 }
