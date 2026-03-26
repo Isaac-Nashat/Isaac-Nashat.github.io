@@ -8,6 +8,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
+import Image from "next/image";
 import { LogoCloud } from "@/components/ui/logo-cloud-3";
 import AnimatedMetric from "@/components/AnimatedMetric";
 
@@ -91,7 +92,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-bg px-6 py-20 md:px-10 md:py-0 lg:px-20"
+      className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-bg px-6 py-32 md:px-10 md:py-36 lg:px-20 lg:py-40"
     >
       {/* Glow with inertia — drifts behind cursor */}
       {!isTouchDevice && !shouldReduceMotion && (
@@ -104,6 +105,28 @@ export default function Hero() {
       )}
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.015)_0%,transparent_70%)]" />
+
+      <motion.div
+        className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.35 }}
+        transition={{ duration: 1.6, delay: 2.2, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="relative h-[70%] w-[min(500px,80vw)] md:h-[80%] md:w-[min(550px,45vw)] lg:h-[85%] lg:w-[min(600px,40vw)]">
+          <Image
+            src="/isaac.webp"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 768px) 80vw, (max-width: 1024px) 45vw, 40vw"
+            className="object-cover object-top brightness-125"
+            style={{
+              maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%)",
+              WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%)",
+            }}
+          />
+        </div>
+      </motion.div>
 
       <motion.div
         className="relative z-10 flex flex-col items-center"
@@ -211,7 +234,7 @@ export default function Hero() {
 
       {/* Client logos — outside scroll container, pinned near bottom */}
       <motion.div
-        className="absolute bottom-20 md:bottom-24 lg:bottom-28 left-1/2 w-full max-w-lg -translate-x-1/2"
+        className="absolute bottom-28 md:bottom-24 lg:bottom-28 left-1/2 w-full max-w-lg -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 4.6 }}

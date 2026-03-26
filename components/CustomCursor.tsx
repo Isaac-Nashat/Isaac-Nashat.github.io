@@ -82,10 +82,15 @@ export default function CustomCursor() {
     document.addEventListener("mouseleave", handleLeave);
 
     addHoverListeners();
-    const observer = new MutationObserver(addHoverListeners);
+    let debounceTimer: ReturnType<typeof setTimeout>;
+    const observer = new MutationObserver(() => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(addHoverListeners, 200);
+    });
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
+      clearTimeout(debounceTimer);
       window.removeEventListener("mousemove", handleMove);
       document.removeEventListener("mouseenter", handleEnter);
       document.removeEventListener("mouseleave", handleLeave);

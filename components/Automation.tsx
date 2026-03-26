@@ -95,7 +95,7 @@ export default function Automation() {
           {systems.map((system, i) => (
             <motion.div
               key={system.title}
-              className="group rounded-xl border border-white/[0.06] bg-dark-gray/40 p-5 transition-all duration-500 hover:bg-dark-gray hover:border-white/[0.1] md:rounded-2xl md:p-6 lg:p-8"
+              className="group rounded-xl border border-white/[0.06] bg-dark-gray/40 p-5 transition-[background-color,border-color] duration-500 hover:bg-dark-gray hover:border-white/[0.1] md:rounded-2xl md:p-6 lg:p-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

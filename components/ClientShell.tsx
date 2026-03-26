@@ -19,7 +19,7 @@ export default function ClientShell() {
   return (
     <>
       {!shouldReduceMotion && <Preloader />}
-      {tier !== "low" && !shouldReduceMotion && <CustomCursor />}
+      {tier === "high" && !shouldReduceMotion && <CustomCursor />}
     </>
   );
 }
