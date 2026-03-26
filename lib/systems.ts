@@ -26,7 +26,14 @@ export const systems: System[] = [
       "A fully autonomous lead qualification system that ingests prospects from multiple channels, runs AI-powered intent detection, scores each lead using adaptive weighted factors, and routes them to the optimal next step. High-intent leads get immediate outreach. Low-confidence leads enter nurture sequences. Spam gets filtered silently.",
     architecture:
       "Webhook intake receives leads from forms, ads, and API integrations. Each lead passes through an AI intent classifier (GPT-4o-mini with Gemini fallback) that extracts buying signals, urgency, and budget indicators. A scoring engine applies six weighted factors with adaptive learning: the weights adjust automatically based on which signals actually convert. The decision engine routes leads to auto-reply, WhatsApp outreach, nurture drip, or human handoff based on score thresholds and A/B test variants.",
-    techStack: ["n8n", "OpenAI", "Google Gemini", "PostgreSQL", "RabbitMQ", "WhatsApp API"],
+    techStack: [
+      "n8n",
+      "OpenAI",
+      "Google Gemini",
+      "PostgreSQL",
+      "RabbitMQ",
+      "WhatsApp API",
+    ],
     highlights: [
       "Adaptive scoring weights that self-adjust based on real conversion data",
       "A/B testing with epsilon-greedy variant selection and statistical significance detection",
@@ -48,7 +55,16 @@ export const systems: System[] = [
       "A 21-workflow event-driven system that monitors social media across four platforms, detects buying intent in comments and DMs (including Arabic dialect), and converts high-intent users into WhatsApp conversations. The system handles the full lifecycle: intake, AI analysis, scoring, automated replies, nurture sequences, human escalation, A/B testing, and revenue attribution.",
     architecture:
       "Platform-specific listeners (webhooks for Facebook/Instagram/WhatsApp, pollers for TikTok/YouTube) publish events to a RabbitMQ message bus. An AI intent detector processes each message with conversation history and lead memory context. A decision engine scores and routes: auto-reply on the source platform, redirect to WhatsApp, queue for human agent, or enter a 5-step nurture drip. Background workers handle rate limiting, health monitoring, daily reporting, backup management, and a revenue feedback loop that auto-adjusts scoring weights with a 2% learning rate.",
-    techStack: ["n8n", "RabbitMQ", "PostgreSQL", "Redis", "OpenAI", "WhatsApp Cloud API", "Meta Graph API", "YouTube Data API"],
+    techStack: [
+      "n8n",
+      "RabbitMQ",
+      "PostgreSQL",
+      "Redis",
+      "OpenAI",
+      "WhatsApp Cloud API",
+      "Meta Graph API",
+      "YouTube Data API",
+    ],
     highlights: [
       "21 interconnected micro-workflows with event-driven architecture",
       "Arabic/Egyptian dialect intent detection with buying signal extraction",
@@ -91,7 +107,14 @@ export const systems: System[] = [
       "A 7-workflow support automation system that triages incoming tickets, searches a knowledge base for relevant articles, generates contextual AI responses, validates them against quality standards, and either sends them automatically or escalates to human agents. A feedback loop ingests human corrections and uses them to improve future responses.",
     architecture:
       "Tickets arrive via IMAP email or API webhook. A queue controller normalizes and pushes them to a processing queue. Worker nodes pull tickets and run them through a multi-stage pipeline: category classification, urgency detection, KB similarity search, AI response generation with the retrieved context, and a validation step that checks response quality before sending. If confidence is low or the topic is flagged for human review, it routes to a Slack escalation channel. A learning loop captures human edits to AI responses and feeds them back as training examples. Hourly metric aggregation tracks resolution rates, response times, and escalation ratios.",
-    techStack: ["n8n", "OpenAI", "IMAP", "Slack", "Queue API", "Knowledge Base API"],
+    techStack: [
+      "n8n",
+      "OpenAI",
+      "IMAP",
+      "Slack",
+      "Queue API",
+      "Knowledge Base API",
+    ],
     highlights: [
       "Multi-stage validation prevents low-quality responses from reaching customers",
       "Human resolution feedback creates a reinforcement learning loop",
@@ -112,7 +135,14 @@ export const systems: System[] = [
       "An automated recruitment pipeline that watches Google Drive folders (each folder = a job role), extracts text from uploaded CVs, runs them through a dual-AI assessment (information extraction + role-fit scoring), auto-categorizes candidates as shortlisted/review/rejected, notifies recruiters of high-scoring candidates, and logs run statistics for tracking.",
     architecture:
       "A Google Drive trigger watches a parent folder weekly. Subfolders are discovered automatically, with each folder name used as the job role. CVs are downloaded, text-extracted, and deduplicated against a tracking sheet. Two parallel AI branches process each CV: an information extractor pulls structured contact info (name, email, GitHub, languages, certifications, years of experience), while a CV assessor scores the candidate 1-10 against the specific role using a strict startup-grade rubric. Results merge and auto-set status: 8+ shortlisted, 4-7 review, below 4 rejected. High-score candidates trigger recruiter email alerts.",
-    techStack: ["n8n", "OpenRouter", "Google Drive", "Google Sheets", "Gmail", "LangChain"],
+    techStack: [
+      "n8n",
+      "OpenRouter",
+      "Google Drive",
+      "Google Sheets",
+      "Gmail",
+      "LangChain",
+    ],
     highlights: [
       "Dual-AI pipeline: parallel information extraction and role-fit assessment",
       "Multi-folder support: each subfolder is automatically treated as a separate job role",
@@ -143,7 +173,15 @@ export const systems: System[] = [
   },
 ];
 
-export const systemCategories = ["All", "Sales", "CRM", "Intelligence", "Support", "HR", "Content"];
+export const systemCategories = [
+  "All",
+  "Sales",
+  "CRM",
+  "Intelligence",
+  "Support",
+  "HR",
+  "Content",
+];
 
 export function getSystemBySlug(slug: string): System | undefined {
   return systems.find((s) => s.slug === slug);
