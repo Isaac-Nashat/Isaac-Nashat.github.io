@@ -85,8 +85,8 @@ export default function AnimatedMetric({
     return <span ref={ref} className={className}>{value}</span>;
   }
 
-  const isPositive = prefix === "+";
-  const isNegative = prefix === "−" || prefix === "-";
+  const isPositive = prefix.startsWith("+");
+  const isNegative = prefix.startsWith("−") || prefix.startsWith("-");
 
   const prefixColor = isPositive
     ? "text-[var(--color-success)]"

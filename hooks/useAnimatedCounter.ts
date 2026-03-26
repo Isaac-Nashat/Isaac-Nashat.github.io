@@ -55,8 +55,8 @@ export function parseMetric(raw: string): {
   number: number;
   suffix: string;
 } {
-  const match = raw.match(/^([+\-−]?)(\d+(?:\.\d+)?)(.*)/);
-  if (!match) return { prefix: "", number: 0, suffix: raw };
+  const match = raw.match(/^([+\-−]?[A-Za-z\s]*)(\d+(?:\.\d+)?)(.*)/);
+  if (!match || !match[2]) return { prefix: "", number: 0, suffix: raw };
   return {
     prefix: match[1].replace("−", "−"),
     number: parseFloat(match[2]),
