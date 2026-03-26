@@ -22,6 +22,7 @@ export const systems: System[] = [
       "End-to-end pipelines that qualify leads, score intent, and route prospects to the right action: auto-reply, nurture, or human handoff.",
     category: "Sales",
     tags: ["AI Agents", "Lead Scoring", "Pipeline Automation"],
+    image: "/systems/ai-sales-lead-engines.webp",
     overview:
       "A fully autonomous lead qualification system that ingests prospects from multiple channels, runs AI-powered intent detection, scores each lead using adaptive weighted factors, and routes them to the optimal next step. High-intent leads get immediate outreach. Low-confidence leads enter nurture sequences. Spam gets filtered silently.",
     architecture:
