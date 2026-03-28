@@ -1,0 +1,38 @@
+# Isaac Nashaat - Revenue Operator & Systems Builder
+
+## Who
+Isaac Nashaat is a revenue operator and systems builder with 7+ years of B2B SaaS experience. He bridges strategy, sales, product, and automation. He is the founder and CEO of PlateForm, a commission-free online ordering platform for restaurants in the MENA region.
+
+## What He Does
+- B2B SaaS sales leadership (enterprise, mid-market, SMB)
+- Go-to-market strategy and execution
+- Building autonomous business systems (AI agents, event-driven pipelines, self-learning workflows)
+- Revenue operations and pipeline management
+- SaaS product development (PlateForm)
+
+## Professional Experience
+- PlateForm (Founder & CEO, 2024-Present): Built a commission-free SaaS ordering platform for restaurants across Egypt, Saudi Arabia, UAE, and the Gulf. 38+ restaurants, 50K+ orders, EGP 3.7M+ saved in aggregator commissions.
+- DoorDash (Senior Associate, Customer Acquisition, 2024-2025): 210% of quota in Q1. Built CRM dashboard that improved forecasting accuracy team-wide.
+- VOIS/Vodafone (Sales & Retention, 2021-2024): Launched Talkmobile's first Sales & Retention (TSAR) team. Ranked top performer.
+- Regional Technology Services (Sales Manager, 2021): Led distributed EMEA B2B SaaS sales team post-merger. GTM alignment and playbook standardization.
+- Kuna (Sales & Retention Manager, 2019-2021): Increased renewals 25%, reduced CAC 10%. Introduced Agile sales methodology.
+- XTB Online Investing (Financial Services Sales, 2018-2019): Managed client portfolios in regulated financial environment.
+
+## Automation Systems Built
+- AI Sales & Lead Engines: End-to-end pipelines with adaptive scoring, A/B testing, multi-channel intake.
+- Social CRM Systems: 21-workflow event-driven system across Facebook, Instagram, TikTok, YouTube into WhatsApp conversion. Scales to 100K+ messages/day.
+- PlateForm CS/AI Sales Agent: 10-workflow omnichannel AI system with 3 specialist agents (Sales/Support/Retention), RAG knowledge base, BANT lead scoring, self-tuning optimizer.
+- Competitor Intelligence: Automated scraping and AI analysis of competitor content with viral prediction scoring and strategy generation.
+- AI Support Agents: 7-workflow autonomous ticket triage with human escalation and self-improving feedback loops.
+- HR & Recruitment Automation: Dual-AI CV assessment with automated scoring and recruiter notifications.
+- Content Repurposing Engines: One-to-many content multiplication with performance feedback loops.
+
+## Tech Stack
+Next.js 16, React 19, TypeScript, Tailwind CSS v4, Framer Motion, n8n, OpenAI, Supabase, PostgreSQL, RabbitMQ, Redis, Infobip, WhatsApp API
+
+## Contact
+- Email: isaac.nashaat@icloud.com
+- LinkedIn: https://linkedin.com/in/isaac-nashaat
+- Behance: https://www.behance.net/isaacnashat
+- PlateForm: https://www.plateform.me
+- Portfolio: https://isaac-nashaat.vercel.app

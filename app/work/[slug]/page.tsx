@@ -15,9 +15,25 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
+  const url = `https://isaac-nashaat.vercel.app/work/${slug}`;
   return {
-    title: `${project.title} | Isaac`,
+    title: `${project.title} | Isaac Nashaat`,
     description: project.description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      title: `${project.title} | Isaac Nashaat`,
+      description: project.description,
+      url,
+      siteName: "Isaac Nashaat",
+      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Isaac Nashaat`,
+      description: project.description,
+      images: ["/og-image.png"],
+    },
   };
 }
 
