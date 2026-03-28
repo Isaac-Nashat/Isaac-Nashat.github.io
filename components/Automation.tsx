@@ -13,7 +13,7 @@ export default function Automation() {
 
   const filtered =
     activeFilter === "All"
-      ? systems
+      ? systems.slice(0, 6)
       : systems.filter((s) => s.category === activeFilter);
 
   const handleClose = useCallback(() => {

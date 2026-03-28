@@ -172,6 +172,29 @@ export const systems: System[] = [
       "Extensible: email, blog, and video script outputs can be added as additional branches",
     ],
   },
+  {
+    id: 7,
+    slug: "omnichannel-ai-agent",
+    title: "Omnichannel AI Agent",
+    description:
+      "Omnichannel AI-powered customer support and sales agent. Multi-agent routing, RAG knowledge base, BANT lead scoring, and self-tuning optimization.",
+    category: "Omnichannel",
+    tags: ["Multi-Agent AI", "Infobip", "RAG", "Supabase"],
+    image: "/systems/plateform-ai-agent.webp",
+    overview:
+      "A 10-workflow omnichannel AI system built to handle customer support and sales across WhatsApp, SMS, and Web. Incoming messages go through rate limiting, deduplication, and language detection (AR/FR/EN/ES), then route to specialized AI agents: Sales Specialist (aggressive closing), Support Specialist (empathetic resolution), or Retention Specialist (loyalty focus). Each agent has access to real tools (order lookup, pricing API, CRM queries) and operates with 2-step reasoning, confidence scoring, and automatic handoff to human agents when confidence drops below 0.4.",
+    architecture:
+      "Messages arrive via Infobip webhook into WF-01 (rate limiting, dedup, priority scoring 1-5, regex + AI intent classification). WF-02 runs 5-way parallel data fetch: response cache check, RAG (8 chunks reranked to top 5), conversation memory (summarized older + verbatim recent 5), customer profile (orders, spend, VIP status), and feedback history. On cache hit, AI is skipped entirely. On miss, context merges and routes to the appropriate specialist agent. Agents execute real Supabase tool calls, generate responses with confidence scores, and post-process: low confidence triggers WF-05 (human handoff with AI-generated briefing), lead signals trigger WF-03 (BANT scoring + buying stage state machine). WF-08 auto-optimizes every 6 hours, adjusting LLM temperatures, handoff thresholds, and RAG chunk counts based on performance metrics. WF-10 tracks a 7-stage conversion funnel with A/B test evaluation.",
+    techStack: ["n8n", "Infobip", "OpenAI GPT-4o-mini", "Supabase", "Slack", "WhatsApp API"],
+    highlights: [
+      "3 specialized AI agents (Sales/Support/Retention) with distinct prompts, temperatures, and goals",
+      "5-way parallel data fetch with response caching (12-48h TTL based on confidence)",
+      "Self-tuning optimizer adjusts thresholds every 6 hours based on real performance data",
+      "7-stage conversion funnel with A/B testing and statistical significance detection",
+      "BANT-based lead scoring with buying stage state machine and objection tracking",
+    ],
+    scale: "10K+ messages/day",
+  },
 ];
 
 export const systemCategories = [
@@ -182,6 +205,7 @@ export const systemCategories = [
   "Support",
   "HR",
   "Content",
+  "Omnichannel",
 ];
 
 export function getSystemBySlug(slug: string): System | undefined {
