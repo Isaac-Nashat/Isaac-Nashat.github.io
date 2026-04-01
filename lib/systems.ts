@@ -203,6 +203,7 @@ export const systems: System[] = [
       "Search-informed, feedback-driven bilingual content engine with three autonomous streams: SEO blogs, news insights, and performance-based rewrites.",
     category: "Content",
     tags: ["AI Writing", "SEO", "Bilingual", "GSC Tracking"],
+    image: "/systems/ai-blog-copywriter.webp",
     overview:
       "A 71-node content production system that autonomously generates, scores, and publishes bilingual blog content (English and Arabic). Three independent streams run in parallel: an SEO pipeline that researches competitors, analyzes SERPs, and generates keyword-optimized articles; a news pipeline that monitors RSS feeds, filters for industry relevance, and produces opinionated analysis pieces; and a performance tracker that pulls Google Search Console data weekly to auto-rewrite underperforming titles and flag content that needs attention.",
     architecture:
