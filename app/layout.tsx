@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       "Revenue operator and systems builder with 7+ years in B2B SaaS. I sell, strategize, and build the autonomous systems that scale revenue.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Isaac Nashaat - Revenue Operator & Systems Builder",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: "Isaac Nashaat | Revenue Operator & Systems Builder",
     description:
       "Revenue operator and systems builder with 7+ years in B2B SaaS. I sell, strategize, and build the autonomous systems that scale revenue.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 };
 
