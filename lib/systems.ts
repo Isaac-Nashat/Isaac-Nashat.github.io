@@ -195,6 +195,28 @@ export const systems: System[] = [
     ],
     scale: "10K+ messages/day",
   },
+  {
+    id: 8,
+    slug: "ai-blog-copywriter",
+    title: "AI Blog Copywriter Engine",
+    description:
+      "Search-informed, feedback-driven bilingual content engine with three autonomous streams: SEO blogs, news insights, and performance-based rewrites.",
+    category: "Content",
+    tags: ["AI Writing", "SEO", "Bilingual", "GSC Tracking"],
+    overview:
+      "A 71-node content production system that autonomously generates, scores, and publishes bilingual blog content (English and Arabic). Three independent streams run in parallel: an SEO pipeline that researches competitors, analyzes SERPs, and generates keyword-optimized articles; a news pipeline that monitors RSS feeds, filters for industry relevance, and produces opinionated analysis pieces; and a performance tracker that pulls Google Search Console data weekly to auto-rewrite underperforming titles and flag content that needs attention.",
+    architecture:
+      "Stream 1 (SEO): A Google Sheets trigger feeds topics with keywords and cluster metadata. The system fetches existing blog posts for internal linking context, runs SERP analysis (top 10 results, H2 extraction, People Also Ask, entity mapping, content gaps), then generates a full article with Claude Sonnet 4 using brand voice rules and competitor insights. The output goes through SEO enrichment (word count, keyword density, readability scoring), AI-powered internal link injection with cluster priority, and a calibrated quality gate. Posts scoring 75+ get auto-published with Google Indexing API pings; 65-74 get one AI rewrite attempt with scoring feedback; below 65 get rejected with a Telegram alert. Stream 2 (News): Hourly RSS monitoring with a strict 3-step AI relevance filter (content type, geography, industry). Relevant articles get transformed into opinionated analysis pieces and fed into the shared quality pipeline. Stream 3 (GSC Tracker): Weekly Google Search Console pull that matches analytics data to published posts and classifies signals: low CTR pages get auto-rewritten titles, striking distance keywords (position 8-15) get flagged for optimization, and dead content gets surfaced for review.",
+    techStack: ["n8n", "Claude Sonnet 4", "GPT-4.1-mini", "Google Search Console", "Serper API", "Telegram"],
+    highlights: [
+      "Three autonomous content streams: SEO blogs, news insights, and performance rewrites",
+      "SERP-informed generation: competitor analysis, entity extraction, content gap detection before writing",
+      "Calibrated quality gate with auto-rewrite loop (75+ publish, 65-74 rewrite, below 65 reject)",
+      "Bilingual output (English + Egyptian Arabic) with Google Indexing API auto-submission",
+      "Weekly GSC performance tracking: auto-rewrites low CTR titles, flags striking distance keywords",
+    ],
+    scale: "20+ posts/month",
+  },
 ];
 
 export const systemCategories = [
